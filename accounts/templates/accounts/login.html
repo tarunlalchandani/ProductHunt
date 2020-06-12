@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if error %}
+<font color = "red">
+{{ error }}!</font>
+
+<br/>
+<br/>
+{% endif %}
+
+<h1> Login! </h1>
+<form method='post' action = "{% url 'login' %}">
+{% csrf_token %}
+Username:
+<br/>
+<input type = "text" name = "username"/>
+<br/>
+Password:
+<br/>
+<input type = "password" name = "password"/>
+<br/>
+<br/>
+<input type = "submit" class = "btn btn-primary" value="Login"/>
+</form>
+
+{% endblock %}

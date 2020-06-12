@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if error %}
+<font color = "red">
+{{ error }}!</font>
+
+<br/>
+<br/>
+{% endif %}
+
+<h1> Sign Up! </h1>
+<form method='post' action = "{% url 'signup' %}">
+{% csrf_token %}
+Username:
+<br/>
+<input type = "text" name = "username"/>
+<br/>
+Fullname:
+<br/>
+<input type = "text" name = "fullname"/>
+<br/>
+Gender:
+<br/>
+<input type = "Gender" name = "gender"/>
+<br/>
+Date-of-birth:
+<br/>
+<input type = "date" name = "dateofbirth"/>
+<br/>
+Mobile:
+<br/>
+<input type = "number" name = "mobileNumber"/>
+<br/>
+Email:
+<br/>
+<input type = "email" name = "email"/>
+<br/>
+AadharCard:
+<br/>
+<input type = "number" name = "aadharCard"/>
+<br/>
+<br/>
+Password:
+<br/>
+<input type = "Password" name = "password1"/>
+<br/>
+Confirm Password
+<br/>
+<input type = "password" name = "password2"/>
+<br/>
+<br/>
+<input class="btn btn-primary" type = "submit"  value="SignUp!"/>
+<br/>
+</form>
+
+{% endblock %}
